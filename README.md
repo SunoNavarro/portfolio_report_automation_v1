@@ -28,6 +28,7 @@ Potential value: saves 2–5 hours per week and reduces manual reporting errors.
 - pandas
 - openpyxl
 - Excel reporting automation
+- tkinter (optional desktop UI; standard library only)
 
 ## Project structure
 
@@ -63,6 +64,8 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
+### Command line
+
 Generate the report:
 
 ```bash
@@ -75,35 +78,23 @@ Optional CSV text encoding (defaults to `utf-8`; useful on Windows with Excel ex
 python src/generate_report.py --input data/sales_sample.csv --output output/sales_report.xlsx --encoding cp1252
 ```
 
-## Branch `visual_script` (desktop GUI)
+### Desktop GUI (tkinter)
 
-Work on the lightweight **tkinter** front-end lives on the **`visual_script`** branch. It uses only the Python standard library for UI (no extra GUI packages) and reuses `generate_report.py` unchanged.
+You can also run a small **desktop** launcher on `main`—no extra UI packages, only the Python standard library. It calls the same pipeline as `generate_report.py`.
 
-**What it does**
-
-- Opens a native file dialog so you can pick a sales **CSV**.
-- Writes the Excel workbook **in the same folder as the CSV**, named `{original_csv_stem}_report.xlsx` (for example `sales_sample.csv` → `sales_sample_report.xlsx`).
-- Shows a confirmation dialog with the full output path, or an error dialog if generation fails (for example the output file is open in Excel).
-
-**How to use it**
-
-Check out the branch, install dependencies as usual, then run:
+From the project root (after `pip install -r requirements.txt`):
 
 ```bash
-git fetch origin
-git checkout visual_script
-pip install -r requirements.txt
 python src/visual_script.py
 ```
 
-If you work only locally and the branch already exists:
+- Opens a native file dialog to pick a sales **CSV**.
+- Saves the workbook **next to that file** as `{original_csv_stem}_report.xlsx` (for example `sales_sample.csv` → `sales_sample_report.xlsx`).
+- Shows a confirmation with the full output path, or an error if something goes wrong (for example the output workbook is open in Excel).
 
-```bash
-git checkout visual_script
-python src/visual_script.py
-```
+Cancelling the file dialog exits without generating a report.
 
-Cancelling the file dialog closes the app without generating a report.
+*(The GUI was first developed on the `visual_script` branch and merged into `main`.)*
 
 ## Testing
 
