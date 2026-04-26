@@ -1,0 +1,21 @@
+date,client,region,product,units,unit_price,status
+2026-01-03,Acme Corp,Madrid,Software License,4,299,paid
+2026-01-05,Northwind,Barcelona,Support Plan,2,499,paid
+2026-01-08,Globex,Valencia,Software License,1,299,pending
+2026-01-12,Initech,Madrid,Cloud Package,3,699,paid
+2026-01-15,Umbrella,Sevilla,Support Plan,1,499,cancelled
+2026-01-18,Acme Corp,Madrid,Cloud Package,2,699,paid
+2026-01-21,Stark Industries,Barcelona,Software License,5,299,paid
+2026-01-24,Wayne Enterprises,Valencia,Support Plan,3,499,pending
+2026-02-02,Globex,Valencia,Cloud Package,1,699,paid
+2026-02-06,Northwind,Barcelona,Software License,6,299,paid
+2026-02-09,Initech,Madrid,Support Plan,2,499,paid
+2026-02-14,Umbrella,Sevilla,Cloud Package,2,699,pending
+2026-02-18,Acme Corp,Madrid,Support Plan,1,499,paid
+2026-02-22,Stark Industries,Barcelona,Cloud Package,4,699,paid
+2026-03-01,Wayne Enterprises,Valencia,Software License,2,299,paid
+2026-03-04,Globex,Valencia,Support Plan,2,499,paid
+2026-03-10,Northwind,Barcelona,Cloud Package,1,699,cancelled
+2026-03-14,Initech,Madrid,Software License,7,299,paid
+2026-03-20,Umbrella,Sevilla,Software License,3,299,paid
+2026-03-27,Stark Industries,Barcelona,Support Plan,2,499,pending
