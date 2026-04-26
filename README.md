@@ -39,7 +39,8 @@ portfolio_report_automation_v1/
 │   └── sales_report.xlsx
 ├── src/
 │   ├── __init__.py
-│   └── generate_report.py
+│   ├── generate_report.py
+│   └── visual_script.py
 ├── tests/
 │   └── test_generate_report.py
 ├── requirements.txt
@@ -73,6 +74,36 @@ Optional CSV text encoding (defaults to `utf-8`; useful on Windows with Excel ex
 ```bash
 python src/generate_report.py --input data/sales_sample.csv --output output/sales_report.xlsx --encoding cp1252
 ```
+
+## Branch `visual_script` (desktop GUI)
+
+Work on the lightweight **tkinter** front-end lives on the **`visual_script`** branch. It uses only the Python standard library for UI (no extra GUI packages) and reuses `generate_report.py` unchanged.
+
+**What it does**
+
+- Opens a native file dialog so you can pick a sales **CSV**.
+- Writes the Excel workbook **in the same folder as the CSV**, named `{original_csv_stem}_report.xlsx` (for example `sales_sample.csv` → `sales_sample_report.xlsx`).
+- Shows a confirmation dialog with the full output path, or an error dialog if generation fails (for example the output file is open in Excel).
+
+**How to use it**
+
+Check out the branch, install dependencies as usual, then run:
+
+```bash
+git fetch origin
+git checkout visual_script
+pip install -r requirements.txt
+python src/visual_script.py
+```
+
+If you work only locally and the branch already exists:
+
+```bash
+git checkout visual_script
+python src/visual_script.py
+```
+
+Cancelling the file dialog closes the app without generating a report.
 
 ## Testing
 
